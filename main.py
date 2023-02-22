@@ -1,5 +1,6 @@
 import speech_recognition as sr
 from googletrans import Translator
+import uuid
 from gtts import gTTS
 from io import BytesIO
 from playsound import playsound
@@ -37,11 +38,12 @@ save_new_sentence = change_language.pronunciation
 
 mp3_fp = BytesIO()
 save_file = gTTS(save_new_sentence, lang='ja')
+randomize_filename = str(uuid.uuid4()) + '.mp3'
 
 # create the audiofile with translated sentence:
-with open('test_program.mp3', 'wb') as f:
+with open(randomize_filename, 'wb') as f:
     save_file.write_to_fp(f)
 
 # play the audio file: 
 
-playsound('test_program.mp3')
+playsound(randomize_filename)
