@@ -31,6 +31,7 @@ translator = Translator()
 change_language = translator.translate(sentence, src='en', dest='ja')
 
 # print(change_language.pronunciation, change_language.text)
+print(change_language.pronunciation)
 
 save_new_sentence = change_language.pronunciation
 
